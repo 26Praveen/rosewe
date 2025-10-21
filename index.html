@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebEngage Push Test | Demo Store</title>
+  <link rel="manifest" href="manifest.json" />
+  <style>
+    body {
+      background: #f4f6f8;
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0077ff, #00d4ff);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .hero {
+      text-align: center;
+      background: linear-gradient(135deg, #00d4ff, #0077ff);
+      color: white;
+      border-radius: 16px;
+      padding: 60px 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    #testPush {
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    #testPush:hover {
+      background-color: #ff8533;
+      transform: scale(1.05);
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .product-card h3 {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+
+    .product-card p {
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    .price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #0077ff;
+    }
+
+    .add-to-cart {
+      background: #0077ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .add-to-cart:hover {
+      background: #005fcc;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 50px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+  </style>
+
+  <!-- WebEngage Script -->
+  <script id="_webengage_script_tag" type="text/javascript">
+    var webengage;
+    !(function (w, e, b, n, g) {
+      function o(e, t) {
+        e[t[t.length - 1]] = function () {
+          r.__queue.push([t.join("."), arguments]);
+        };
+      }
+      var i,
+        s,
+        r = w[b],
+        z = " ",
+        l = "init options track screen onReady".split(z),
+        a = "webPersonalization feedback survey notification notificationInbox".split(
+          z
+        ),
+        c = "options render clear abort".split(z),
+        p = "Prepare Render Open Close Submit Complete View Click".split(z),
+        u = "identify login logout setAttribute".split(z);
+      if (!r || !r.__v) {
+        for (w[b] = r = { __queue: [], __v: "6.0", user: {} }, i = 0; i < l.length; i++) o(r, [l[i]]);
+        for (i = 0; i < a.length; i++) {
+          for (r[a[i]] = {}, s = 0; s < c.length; s++) o(r[a[i]], [a[i], c[s]]);
+          for (s = 0; s < p.length; s++) o(r[a[i]], [a[i], "on" + p[s]]);
+        }
+        for (i = 0; i < u.length; i++) o(r.user, ["user", u[i]]);
+        setTimeout(function () {
+          var f = e.createElement("script"),
+            d = e.getElementById("_webengage_script_tag");
+          f.type = "text/javascript";
+          f.async = !0;
+          f.src =
+            ("https:" == e.location.protocol
+              ? "https://ssl.widgets.webengage.com"
+              : "http://cdn.widgets.webengage.com") + "/js/webengage-min-v-6.0.js";
+          d.parentNode.insertBefore(f, d);
+        });
+      }
+    })(window, document, "webengage");
+    webengage.init("~2024b70d");
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>EngageShop</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">Offers</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Welcome to EngageShop</h2>
+      <p>Exclusive deals, trending products, and push notifications powered by WebEngage 🚀</p>
+      <button id="testPush">Enable Push Notifications</button>
+    </section>
+
+    <section class="products">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?auto=format&fit=crop&w=800&q=80" alt="Running Shoes" />
+        <h3>Running Shoes</h3>
+        <p>Lightweight and comfortable for daily workouts.</p>
+        <div class="price">$59.99</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1580894908361-967195033215?auto=format&fit=crop&w=800&q=80" alt="Wireless Headphones" />
+        <h3>Wireless Headphones</h3>
+        <p>Noise-cancelling headphones with deep bass.</p>
+        <div class="price">$89.99</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=800&q=80" alt="Smart Watch" />
+        <h3>Smart Watch</h3>
+        <p>Track your fitness and stay connected on the go.</p>
+        <div class="price">$129.99</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="Laptop" />
+        <h3>Lightweight Laptop</h3>
+        <p>Portable power for work, entertainment, and more.</p>
+        <div class="price">$749.99</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1606813902786-07c2b59dfa3b?auto=format&fit=crop&w=800&q=80" alt="Backpack" />
+        <h3>Travel Backpack</h3>
+        <p>Spacious, stylish, and waterproof backpack for everyday use.</p>
+        <div class="price">$49.99</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1616628188502-414c1a78ef06?auto=format&fit=crop&w=800&q=80" alt="Sunglasses" />
+        <h3>Polarized Sunglasses</h3>
+        <p>UV-protected lenses with sleek modern design.</p>
+        <div class="price">$39.99</div>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 EngageShop. All rights reserved.</p>
+    <p>Made for WebEngage Push Notification Testing.</p>
+  </footer>
+
+  <script>
+    document.getElementById("testPush").addEventListener("click", function () {
+      webengage.notification.onClick();
+      alert("Push Notification test triggered!");
+    });
+
+    const buttons = document.querySelectorAll(".add-to-cart");
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        alert("Item added to cart!");
+        // Example WebEngage tracking:
+        // webengage.track("Added to Cart", { product_name: "Running Shoes", price: 59.99 });
+      });
+    });
+  </script>
+</body>
+</html>
